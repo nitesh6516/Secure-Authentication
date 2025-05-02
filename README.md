@@ -1,36 +1,93 @@
-# 🔐 Secure Authentication Module for Operating Systems (Python CLI)
+Secure Authentication Module
+A CLI-based secure authentication system developed as part of CSE 316 - Operating Systems coursework. This Python-based project implements multi-factor authentication (MFA), account lockout mechanisms, and encrypted password storage using industry-standard libraries.
 
-This project is a **secure, command-line-based authentication module** designed to simulate OS-level access control using **multi-factor authentication (MFA)**. It focuses on safe credential handling, OTP-based MFA, and protection against brute-force attacks.
+🔐 Features
+Secure CLI Login using username and password
 
----
+Multi-Factor Authentication (MFA) with OTP (simulated)
 
-## 📌 Features
+Password Encryption using bcrypt with salting
 
-- ✅ User Registration with bcrypt password hashing
-- ✅ Secure Login with OTP verification (MFA)
-- ✅ Account lockout after multiple failed login attempts
-- ✅ Input hiding for passwords (`getpass`)
-- ✅ Cross-platform CLI (Linux, Windows, macOS)
-- ✅ Minimal dependencies & easy to set up
+Account Lockout after 3 failed login attempts
 
----
+Masked Password Input for secure credential entry
 
-## 🛠️ Technologies Used
+Simulated OTP Delivery for MFA testing
 
-| Purpose                | Tool / Library     |
-|------------------------|--------------------|
-| Language               | Python 3.x         |
-| Password Hashing       | `bcrypt`           |
-| Input Hiding           | `getpass`          |
-| OTP Generation         | `random`, `string` |
-| Data Storage           | JSON File          |
+Modular design for future integration with:
 
----
+Vulnerability scanner
 
-## 🚀 How to Run the Project
+System monitor
 
-### 1. 📥 Clone the Repository
+Web dashboard (Flask/Django compatible)
 
-```bash
-git clone https://github.com/your-username/SecureAuthOS.git
-cd SecureAuthOS
+🛠️ Technologies Used
+Language: Python 3.9+
+
+Libraries:
+
+bcrypt – Password hashing
+
+json – Lightweight data storage
+
+getpass – Secure input handling
+
+random, string – OTP generation
+
+os – File system interaction
+
+Tools: Git, GitHub, Visual Studio Code
+
+📋 Core Modules Overview
+Module	Description
+register()	Registers users with encrypted passwords
+login()	Authenticates users with MFA and lockout logic
+generate_otp()	Creates a 6-digit OTP
+simulate_otp_send()	Simulates OTP delivery for testing
+get_secure_password()	Handles secure password input
+main()	CLI interface for user interaction
+
+🧠 System Workflow
+User Registration with secure password hashing.
+
+Login Attempt:
+
+Verify username and password.
+
+Send simulated OTP.
+
+Validate OTP.
+
+Track failed login attempts.
+
+Lock account after 3 failures.
+
+🔮 Future Enhancements
+Real OTP delivery via email or SMS
+
+Web-based interface for user/admin control
+
+Integration with relational databases (e.g., PostgreSQL)
+
+Real-time threat detection and logging
+
+Support for advanced protocols (FIDO2, WebAuthn)
+
+📁 File Structure
+bash
+Copy
+Edit
+Secure-Authentication/
+├── users.db          # JSON-based user database
+├── auth_module.py    # Main Python authentication code
+└── README.md         # Project overview
+🧑‍💻 Contributors
+Hritik Kumar – 12317140
+
+Nitesh Kumar – 12323263
+
+Aditya Choudhary – 12321604
+Under guidance of Dr. Richa Sharma
+
+📎 GitHub Repository
